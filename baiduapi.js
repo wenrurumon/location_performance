@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div id="allmap"></div>
-	<p>返回北京市地图上圆形覆盖范围内的“餐馆”检索结果，并展示在地图上</p >
+	<p>返回地图上圆形覆盖范围内的检索结果，并展示在地图上</p >
 <div id="r-result"></div>
   </body>
 </html>
