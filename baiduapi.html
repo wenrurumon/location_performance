@@ -19,9 +19,9 @@
 </html>
 <script type="text/javascript">
 	// 百度地图API功能
-	var category = '学校';
+	var keyword = '大学';
 	var map = new BMap.Map("allmap");            // 创建Map实例
-	var mPoint = new BMap.Point(121.420894, 31.223487);  
+	var mPoint = new BMap.Point(104.055164, 30.650996);  
 	map.enableScrollWheelZoom();
 	map.centerAndZoom(mPoint,15);
 
@@ -34,10 +34,12 @@
 			if (local.getStatus() == BMAP_STATUS_SUCCESS){
 				var s = [];
 				for (var i = 0; i < results.getCurrentNumPois(); i ++){
-					s.push(results.getPoi(i).title + ", " + results.getPoi(i).address);
+					s.push(results.getPoi(i).title + ", " + results.getPoi(i).address + ", " + 
+						results.getPoi(i).point.lat + ", " + results.getPoi(i).point.lng);
+					console.log(results.getPoi(i));
 				}
 				document.getElementById("r-result").innerHTML = s.join("<br/>");
 			}
 		}});  
-    local.searchNearby(category,mPoint,1000);
+    local.searchNearby(keyword,mPoint,1000);
 </script>
