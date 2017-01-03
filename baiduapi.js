@@ -12,20 +12,19 @@
 	<title>圆形区域搜索</title>
 </head>
 <body>
-	<div id="allmap"></div>
-	<p>返回北京市地图上圆形覆盖范围内的poi类别检索结果，并展示在地图上</p >
-<div id="r-result"></div>
+	<div id="allmap" style="display:none"></div>
+	<div id="r-result"></div>
   </body>
 </html>
 <script type="text/javascript">
 	// 百度地图API功能
-	var keyword = '大学';
+	var keyword = '餐厅';
 	var map = new BMap.Map("allmap");            // 创建Map实例
 	var mPoint = new BMap.Point(104.055164, 30.650996);  
 	map.enableScrollWheelZoom();
 	map.centerAndZoom(mPoint,15);
 
-	var circle = new BMap.Circle(mPoint,1000,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.3});
+	var circle = new BMap.Circle(mPoint,500,{fillColor:"blue", strokeWeight: 1 ,fillOpacity: 0.3, strokeOpacity: 0.3});
     map.addOverlay(circle);
     var local =  new BMap.LocalSearch(map, {renderOptions: {map: map, autoViewport: false},
  pageCapacity:100, 
@@ -41,5 +40,5 @@
 				document.getElementById("r-result").innerHTML = s.join("<br/>");
 			}
 		}});  
-    local.searchNearby(keyword,mPoint,1000);
+    local.searchNearby(keyword,mPoint,250);
 </script>
