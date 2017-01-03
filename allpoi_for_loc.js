@@ -53,7 +53,7 @@
 	    local.searchNearby(str,mPoint,500);
     }
 
-    var arr = ["餐厅","学校","工厂","公园","购物","银行","住宅"];
+    var arr = ["餐厅","学校","工厂","公园","购物","银行","住宅","办公","旅游"];
 	for (var i = 0; i < arr.length; i++) {
 		obj(arr[i]);
 	}
