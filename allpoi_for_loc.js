@@ -47,11 +47,13 @@
 				document.getElementById("r-result").innerHTML += s.join("<br/>");
 				//f.close();
 				}
+				document.getElementById("r-result").innerHTML += "<br/>";
+
 		}}); 
-	    local.searchNearby(str,mPoint,250);
+	    local.searchNearby(str,mPoint,500);
     }
 
-    var arr = ["餐厅","银行"];
+    var arr = ["餐厅","学校","工厂","公园","购物","银行","住宅"];
 	for (var i = 0; i < arr.length; i++) {
 		obj(arr[i]);
 	}
