@@ -17,7 +17,6 @@
   </body>
 </html>
 <script type="text/javascript">
-	
 	// 百度地图API功能
 //	var keyword = str;
 	var map = new BMap.Map("allmap");            // 创建Map实例
@@ -50,12 +49,10 @@
 				}
 		}}); 
 	    local.searchNearby(str,mPoint,250);
+    }
 
-var arr = ["餐厅","银行"];
-	
+    var arr = ["餐厅","银行"];
 	for (var i = 0; i < arr.length; i++) {
-		console.log(arr[i])
 		obj(arr[i]);
 	}
-	
 </script>
