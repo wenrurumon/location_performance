@@ -17,9 +17,10 @@
   </body>
 </html>
 <script type="text/javascript">
+
 	var map = new BMap.Map("allmap");
-		
-	function obj(str,loc1,loc2){
+			
+	function core(str,loc1,loc2){
 		var mPoint = new BMap.Point(loc1,loc2);  
 		map.enableScrollWheelZoom();
 		map.centerAndZoom(mPoint,15);
@@ -31,7 +32,7 @@
 				if (local.getStatus() == BMAP_STATUS_SUCCESS){
 					var s = [];
 					for (var i = 0; i < results.getCurrentNumPois(); i ++){
-						s.push(str + ", " + results.getPoi(i).title + ", " + results.getPoi(i).address + ", " + 
+						s.push(loc1 + "_" + loc2 + ", " +str + ", " + results.getPoi(i).title + ", " + results.getPoi(i).address + ", " + 
 							results.getPoi(i).point.lat + ", " + results.getPoi(i).point.lng);
 						console.log(results.getPoi(i));
 					}
@@ -44,8 +45,13 @@
 	    local.searchNearby(str,mPoint,500);
     }
 
-    var arr = ["餐厅","学校","工厂","公园","购物","银行","住宅","办公","旅游"];
-	for (var i = 0; i < arr.length; i++) {
-		obj(arr[i],104.05164,30.650996);
-	}
+    function eachloc(loc1,loc2){
+        var arr = ["餐厅","学校","工厂","公园","购物","银行","住宅","办公","旅游"];
+		for (var i = 0; i < arr.length; i++) {
+			core(arr[i],loc1,loc2);
+	}}
+    
+    eachloc(104.05164,30.650996);
+    eachloc(104.05164,30.450996);
+    
 </script>
