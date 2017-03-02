@@ -61,6 +61,10 @@ casper.run();
 				document.getElementById("r-result").innerHTML += s.join("<br/>");
 				}
 				document.getElementById("r-result").innerHTML += "<br/>";
+				/*这一部分加标签我没有测试不能确定是对的*/
+				var childNode = document.createElement('span');
+				childNode.id = 'finish';
+				document.getElementsByTagName('body')[0].appendChild(childNode);
 
 		}}); 
 	    local.searchNearby(str,mPoint,500);
